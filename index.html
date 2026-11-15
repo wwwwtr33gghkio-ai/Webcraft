@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCraft - Web Development Fundamentals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>WebCraft</h1>
+        <p>Interactive Educational Platform for Web Development Fundamentals</p>
+    </header>
+
+    <div class="container">
+        <div id="homeScreen">
+            <section class="intro-section">
+                <h2>About WebCraft and Our Mission</h2>
+                <p>
+                    <strong>WebCraft</strong> is an educational platform engineered to teach students and aspiring developers the foundational pillars of web development from scratch. Our mission is to bridge the gap between theoretical computer science concepts and practical implementation, offering structured lessons, comprehensive code breakdowns, and rigorous assessments.
+                </p>
+                <p>
+                    Whether you are preparing for technical competitions, hackathons, or building your professional portfolio, WebCraft provides a guided curriculum designed to master modern frontend development.
+                </p>
+            </section>
+
+                <section class="intro-section">
+                <h2>What is a Website and How Do Websites Work?</h2>
+                <p>
+                    A <strong>website</strong> is a collection of related web pages, digital assets, and files hosted on a web server and accessible via the internet through a unique web address known as a URL (Uniform Resource Locator). When you enter a website URL into your browser, your computer sends an HTTP request to a remote web server, which responds by transmitting HTML, CSS, and JavaScript files back to your browser for rendering.
+                </p>
+                <h3>Core Anatomy and Parts of a Website:</h3>
+                <ul class="tech-overview">
+                    <li><strong>Frontend (Client-Side):</strong> Everything the user directly visualizes and interacts with inside the web browser canvas, structured using HTML, styled with CSS, and made dynamic with JavaScript.</li>
+                    <li><strong>Backend (Server-Side):</strong> The underlying server infrastructure, application logic, and database management systems that process user authentication, data storage, and server requests behind the scenes.</li>
+                    <li><strong>Domain Name and DNS:</strong> The human-readable web address (e.g., example.com) that translates into numeric server IP addresses via the Domain Name System.</li>
+                    <li><strong>Hosting Infrastructure:</strong> The physical or cloud-based servers where website code and files are stored and kept online 24/7 for public access.</li>
+                </ul>
+            </section>
+
+            <section class="intro-section">
+                <h2>Core Technologies of Frontend Development</h2>
+                <p>
+                    Frontend web development relies on three core technologies working in seamless synergy:
+                </p>
+                <ul class="tech-overview">
+                    <li><strong>HTML (HyperText Markup Language):</strong> The structural skeleton that defines headings, paragraphs, images, links, and forms on a page.</li>
+                    <li><strong>CSS (Cascading Style Sheets):</strong> The presentation layer that controls colors, fonts, responsive layouts, margins, and animations.</li>
+                    <li><strong>JavaScript (JS):</strong> The programming language that executes logic, handles user events, modifies the DOM, and builds interactive applications.</li>
+                </ul>
+            </section>
+
+            <div class="curriculum-header">
+                <div>
+                    <h2 class="section-heading">Curriculum Modules</h2>
+                    <p class="section-sub">Complete every lesson and pass all assessment questions in a module to unlock the next track. Your progress is automatically saved.</p>
+                </div>
+                <button class="reset-btn" onclick="resetProgress()">Reset Progress</button>
+            </div>
+
+            <div class="modules-grid">
+                <div class="module-card" id="card-html">
+                    <div class="module-header">
+                        <h3>1. HTML</h3>
+                        <span class="status-badge unlocked" id="status-html">Available</span>
+                    </div>
+                    <p class="module-summary">Core markup structure, document metadata, and semantic body elements.</p>
+                    <ul class="lesson-list">
+                        <li>Lesson 1: What is HTML?</li>
+                        <li>Lesson 2: HTML Head</li>
+                        <li>Lesson 3: HTML Body</li>
+                    </ul>
+                    <button class="btn" id="btn-html" onclick="openModule('html')">Start HTML Module</button>
+                </div>
+
+                <div class="module-card locked" id="card-css">
+                    <div class="module-header">
+                        <h3>2. CSS</h3>
+                        <span class="status-badge locked-badge" id="status-css">Locked</span>
+                    </div>
+                    <p class="module-summary">Styling rules, the CSS box model, and modern layout systems.</p>
+                    <ul class="lesson-list">
+                        <li>Lesson 1: What is CSS?</li>
+                        <li>Lesson 2: CSS Box Model & Spacing</li>
+                        <li>Lesson 3: CSS Layout & Flexbox</li>
+                    </ul>
+                    <button class="btn" id="btn-css" onclick="openModule('css')" disabled>Complete HTML First</button>
+                </div>
+
+                <div class="module-card locked" id="card-js">
+                    <div class="module-header">
+                        <h3>3. JavaScript</h3>
+                        <span class="status-badge locked-badge" id="status-js">Locked</span>
+                    </div>
+                    <p class="module-summary">Programming fundamentals, DOM manipulation, and event listeners.</p>
+                    <ul class="lesson-list">
+                        <li>Lesson 1: What is JavaScript?</li>
+                        <li>Lesson 2: JS Variables & Functions</li>
+                        <li>Lesson 3: JS DOM & Events</li>
+                    </ul>
+                    <button class="btn" id="btn-js" onclick="openModule('js')" disabled>Complete CSS First</button>
+                </div>
+            </div>
+
+            <section class="contact-section">
+                <h2>Contact Us</h2>
+                <p>Have questions, feedback, or inquiries regarding the WebCraft platform? Reach out to us directly using the contact details below:</p>
+                <ul class="contact-details">
+                    <li><strong>Lead Developer & Designer:</strong> Sandy Mohamed Ahmed Gharib</li>
+                    <li><strong>Phone Number:</strong> <a href="tel:01559044272">01559044272</a></li>
+                    <li><strong>Email Address:</strong> <a href="mailto:wwwwtr33gghkio@gmail.com">wwwwtr33gghkio@gmail.com</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <div id="lessonScreen" class="lesson-view">
+            <div class="lesson-top-bar">
+                <button class="back-btn" onclick="goHome()">Back to Curriculum</button>
+                <span id="stepIndicator" class="step-badge">Lesson 1 of 3</span>
+            </div>
+
+            <div class="lesson-nav-bar" id="lessonNavBar"></div>
+            
+            <h2 id="moduleMainTitle">Module Title</h2>
+            <h3 id="subLessonTitle" class="sub-title">Lesson Title</h3>
+
+            <div class="lesson-content" id="lessonDesc"></div>
+
+            <div class="code-container">
+                <div class="code-label">Comprehensive Code Example & Syntax Breakdown</div>
+                <pre class="code-block" id="lessonCode"></pre>
+            </div>
+
+            <div class="quiz-box">
+                <h3>Lesson Assessment</h3>
+                <p class="quiz-instruction">Answer all questions correctly to unlock the next lesson.</p>
+                <div id="quizContainer"></div>
+                <button class="btn" id="submitQuizBtn" onclick="checkAnswers()">Submit Answers</button>
+                <div class="feedback" id="feedbackMsg"></div>
+                <div id="explanationContainer" class="explanation-container"></div>
+                <button class="btn next-lesson-btn" id="nextLessonBtn" onclick="proceedToNext()" style="display: none;">Continue to Next Lesson</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Designed and Developed by Sandy Mohamed Ahmed Gharib | WebCraft Educational Platform</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="lessons-extra.js"></script>
+</body>
+</html>
